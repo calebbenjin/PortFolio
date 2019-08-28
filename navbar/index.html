@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav>
+        <div class="harmbugger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="">Home</a></li>
+            <li><a href="">Home</a></li>
+            <li><a href="">Home</a></li>
+            <li><a href="">Home</a></li>
+            <li><a href="">Home</a></li>
+            <li><a href="">Home</a></li>
+        </ul>
+        <div class="branding">
+            <h3>LOGO</h3>
+        </div>
+       
+    </nav>
+
+    <div class="landing">
+        <h1>Responsive navbar</h1>
+    </div>
+
+    <script>
+        const harmbugger = document.querySelector('.harmbugger');
+        const navLinks = document.querySelector('.nav-links');
+        const links = document.querySelector('nav-links li');
+        const line = document.querySelector('.line');
+
+        harmbugger.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+            // line.classList.toggle('open');
+        })
+    </script>
+</body>
+
+</html>
