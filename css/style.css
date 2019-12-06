@@ -15,13 +15,18 @@ html,
 body {
   font-family: "Nanum Gothic", sans-serif;
   font-size: 1rem;
+  background: var(--bg-dark);
+  /* background: url('/img/bckg.jpg');
+  background-position: center;
+  background-size: cover; */
+  color: #fff;
 }
 
 :root {
-  --primary-color: #04cfbe;
-  --secondary-color: #ff8c00;
+  --primary-color: #FFCC33;
+  --secondary-color: ;
   --bg-light: #f8f8f8cc;
-  --bg-dark: #333;
+  --bg-dark: #1B1B1B;
   --text-light: #fff;
   --text-dark: #333;
 }
@@ -60,20 +65,23 @@ a:hover {
   justify-content: center;
 }
 
+
+
 ul li {
   list-style: none;
   margin-top: 1rem;
 }
 
 /* Nav header */
-nav li {
-  color: var(--text-dark);
+nav li a{
+  color: #fff;
   text-transform: capitalize;
-  transition: all 300ms ease-in-out;
+  transition: all .5s ease-in-out;
+  font-weight: 700;
 }
 nav li:hover {
-  border-bottom: 1px solid var(--text-dark);
-  /* font-weight: bold; */
+  box-shadow: 2px 2px 4px 4px rgba(0,0,0,0.6);
+  color: #FFCC33;
 }
 
 /* Main section */
@@ -82,14 +90,15 @@ nav li:hover {
 
 .profile {
   margin: 5rem 0;
+  cursor: pointer;
 }
 
 .greeting p {
-  color: #fff;
+  color: #1B1B1B;
+  font-weight: 700;
   background: var(--primary-color);
   padding: 6px 1rem;
   font-size: 0.8rem;
-  font-weight: bold;
   width: 25%;
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
@@ -99,37 +108,53 @@ nav li:hover {
 .username h1 {
   font-weight: bold;
   margin: 1rem 0;
+  transition: all 0.5s ease-in-out;
 }
 
 .job-title h5 {
   font-weight: bolder;
   text-transform: lowercase;
   font-size: 1.2rem;
+  transition: all 0.5s ease-in-out;
 }
 
 ul li,
 .social-link {
   line-height: 2;
   font-size: 1rem;
+  transition: all 0.5s ease-in-out;
+}
+.profile ul li:hover, .username:hover, .job-title:hover {
+  color: #FFCC33;
 }
 
 .social-link a {
   margin: 0 1rem;
   font-size: 1.2rem;
+  color: #fff;
+  transition: all 0.5s ease-in-out;
+}
+
+.social-link a:hover {
+  color: #FFCC33;
+  padding: 10px;
+  box-shadow: 2px 2px 4px 4px rgba(0,0,0,0.6);
+  border-radius: 50%;
 }
 
 /* profile Image */
 .image {
-  border: 20px solid #eeee;
+  border: 20px solid #2b2b2b;
   border-radius: 50%;
 }
 .image img {
-  border: 20px solid #ccc;
+  border: 20px solid rgb(54, 54, 54);
   border-radius: 50%;
   transition: all 0.9s ease;
+  opacity: 0.9;
 }
 .image img:hover {
-  transform: rotate(-360deg);
+  transform: rotate(-30deg);
 }
 
 .about-me {
@@ -143,16 +168,48 @@ ul li,
 }
 
 
-.skills p {
-  border: solid 1px var(--primary-color);
+.skills i {
   line-height: 3;
-  padding: 5px 10px;
-  font-size: 1rem;
-  border-radius: 3px;
+  padding: 10px;
+  font-size: 2em;
+  border-radius: 5px;
   display: inline;
   text-transform: lowercase;
-  margin-right: 0.4rem;
+  margin-right: 0.6rem;
   cursor: pointer;
+  box-shadow: 2px 2px 4px 4px rgba(0,0,0,0.6);
+  transition: all .9s ease-in-outl
+}
+
+.skills i:hover {
+  color: #FFCC33;
+}
+.skills .fa-sass {
+  color: #c708c7;
+}
+.skills .fa-html5 {
+  color: #ce4513;
+}
+
+.skills .fa-css3 {
+  color: #3030a1;
+}
+
+.skills .fa-js-square {
+  color: #e9a91f;
+}
+
+.skills .fa-react {
+  color: #7373ee;
+}
+
+.skills .redux {
+  color: #4c76ac;
+  font-weight: 700;
+}
+
+.skills .fa-node-js {
+  color: #0b8d8d;
 }
 
 .what-i-do {
@@ -168,25 +225,39 @@ ul li,
     margin-bottom: 4rem;;
 }
 .i-card {
-    box-shadow: 1px 5px 10px 2px rgba(0,0,0,0.2);
-    padding: 30px 20px;
+    box-shadow: 2px 2px 40px 4px rgba(0,0,0,0.6);
+    padding: 30px 40px;
+    background: #2b2b2b;
+    border-radius: 3px;
+}
+
+.i-card i {
+  font-size: 4em;
+  color: #FFCC33;
+  box-shadow: 1px 5px 10px 2px rgba(0,0,0,0.8);
+  border-radius: 50%;
+  padding: 20px;
 }
 
 @media screen and (max-width: 768px) {
+
+  .profile {
+    text-align: center;
+  }
 
   
   .harmbugger {
       position: absolute;
       cursor: pointer;
-      top: 8%;
-      right:  50%;
+      top: 5%;
+      left:  0%;
       
   }
 
   .line {
       width: 30px;
       height: 3px;
-      background: #333;
+      background: #fff;
       margin: 5px;
   }
 
@@ -208,13 +279,11 @@ ul li,
   .nav-links a {
     color: #fff;
     text-align: center;
-
   }
 
   .nav-links.open {
       clip-path: circle(1000px at 90% -30%);
       -webkit-clip-path: circle(1000px at 95% -30%);
   }
-  
 
 }
